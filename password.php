@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<p>Current Password: <input class="userinfo" type="password" name="pass" size="10" maxlength="20" value="<?php if (isset($_POST['pass'])) echo $_POST['pass']; ?>" ></p>
 	<p>New Password: <input class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" ></p>
 	<p>Confirm New Password: <input class="userinfo"type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" ></p>
-	<p><input class="userinfo" type="submit" name="submit" value="Change Password"></p>
+	<p><input class="usersubmit" type="submit" name="submit" value="Change Password"></p>
 </form>
     </div>
 <?php include('includes/footer.html'); ?>

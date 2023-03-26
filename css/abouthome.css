@@ -2,7 +2,7 @@
     --blue: #00539CFF;
     --darkblue: #010140; 
     --peach: #EEA47FFF;  
-    --arial: 'Arial, sans-serif';
+    --muteyellow: #f6f3ee;
 }
 
 /*home page/index page css*/
@@ -10,11 +10,12 @@
 .homebanner {
     width: 90%;
     height: 400px;
-    background-color: navajowhite;
+    background-color: var(--muteyellow);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -10px;
+    margin-top: -30px;
+    margin-bottom: 30px;
     padding-top: 180px;
     font-family: Arial, sans-serif;
     
@@ -35,7 +36,7 @@
     font-family: Arial, sans-serif;;
     font-size: 30px;
     height: 40px;
-    background-color: navajowhite;
+    background-color: (--muteyellow);
     border: none;
 }
 
@@ -47,29 +48,42 @@
 
 /*about page css*/
 
+/*flex box*/
+
 .aboutsectionscontainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: -20px;
+    margin-bottom: 20px;
 }
 
 .aboutsectionitem{
-    background-color: var(--darkblue);
-    color: white;
+    background-color: var(--muteyellow);
+    color: black;
     justify-content: space-around;
     margin: 20px;
     padding: 20px;
+    margin-top: auto;
+    
+    
 }
+
+/*text adjustments*/
 
 .aboutsubtitle{
     font-size: 30px;
     font-family: Arial, sans-serif;
+    margin-bottom: 0px;
+    margin-top: 20px;
 }
 
 .abouttext{
     font-size: 20px;
     font-family: Arial, sans-serif;
 }
+
+/*contextual links css*/
 
 .contextlinks{
     text-decoration: none;

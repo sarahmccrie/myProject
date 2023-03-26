@@ -3,7 +3,8 @@
 :root {
     --blue: #00539CFF;
     --darkblue: #010140; 
-    --peach: #EEA47FFF;   
+    --peach: #EEA47FFF;  
+    --muteyellow: #f6f3ee;
 }
 
 /*navbar css to use in header.php*/
@@ -16,23 +17,26 @@
 }
 
 #navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 #navbar a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #f6f3ee;
+    color: black;
+    font-weight: bold;
 }
 
 .active {
-  background-color: var(--darkblue);
-  color: white;
+    background-color: var(--darkblue);
+    color: white;
+    font-weight: bold;
+    
 }
 
 .content {

@@ -16,6 +16,7 @@
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/register.php") { ?> class="active" <?php } ?> href="register.php">Register</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/view_users.php") { ?> class="active" <?php } ?> href="view_users.php">View Users</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/password.php") { ?> class="active" <?php } ?> href="password.php">Change Password</a>
+        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/cart.php") { ?> class="active" <?php } ?> href="cart.php">Cart</a>
 
         
 <!--

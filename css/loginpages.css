@@ -2,10 +2,11 @@
     --blue: #00539CFF;
     --darkblue: #010140; 
     --peach: #EEA47FFF;
+    --muteyellow: #f6f3ee;
 }
 
 .boxarea{
-    background-color: navajowhite;
+    background-color: var(--muteyellow);
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -25,5 +26,16 @@ h1{
 .userinfo{
     width: 200px;
     height: 20px;
+}
+
+.usersubmit{
+    height: 40px;
+    width: 210px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.usersubmit:hover{
+    background-color: darkgrey;
 }
 

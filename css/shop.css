@@ -4,6 +4,7 @@
     --blue: #00539CFF;
     --darkblue: #010140; 
     --peach: #EEA47FFF;
+    --muteyellow: #f6f3ee;
     
 }
 
@@ -27,7 +28,7 @@
 
 .shopcategoryimage{
     display: block;
-    max-width: 500px;
+    max-width: 480px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -35,8 +36,12 @@
 
 .tiledescription{
     text-align: center;
-    font-size: 40px;
+    font-size: 36px;
     font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
 }
 
 /*media query for shop page*/
@@ -49,6 +54,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 30px;
         
     }
     
@@ -60,11 +66,20 @@
 
 /* css for art and petproduct pages*/
 
+.pageheading{
+    font-size: 90px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 2px;
+    
+}
+
 .imagecontainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 30px;
 }
 
 .imageitem{
@@ -72,29 +87,52 @@
     margin: 20px;
     padding: 20px;
     flex-wrap: wrap;
-    max-width: 300px;
+    max-width: 340px;
+    box-shadow: 5px 10px 10px #888;
 }
 
 .images{
-    width: 300px;
-    height: 300px;
+    width: 340px;
+    height: 340px;
 }
 
 .addtocartbutton{
-    width: 130px;
-    padding: 5px;
+    width:  36px;
+    padding: 2px;
     margin-top: 10px;
     position: relative;
-    left: 170px;
-    color: white;
-    background-color: var(--peach);
+    left: 80%;
+    color: var(--darkblue);
+    background-color: white;
     font-weight: bold;
-    z-index: +2;
+    font-size: 14px;
 }
 
 .addtocartbutton:hover{
-    background-color: var(--darkblue);
+    background-color: var(--peach);
+    color: white;
 }
+
+
+.likebutton{
+    background-color: white;
+    width: 36px;
+    padding: 0px;
+    left: 75%;
+    margin-top: 10px;
+    position: relative;
+}
+
+.likebutton:hover{
+    background-color: lightpink;
+}
+
+.buttonimage{
+    width: 26px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
 
 
 /*products page*/

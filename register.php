@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<p>Email Address: <input class="userinfo" type="email" name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" > </p>
 	<p>Password: <input class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" ></p>
 	<p>Confirm Password: <input class="userinfo" type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" ></p>
-	<p><input class="userinfo" type="submit" name="submit" value="Register"></p>
+	<p><input class="usersubmit" type="submit" name="submit" value="Register"></p>
 </form>
 </div>
 <?php include('includes/footer.html'); ?>
