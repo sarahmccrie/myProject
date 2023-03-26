@@ -1,0 +1,42 @@
+:root {
+    --blue: #00539CFF;
+    --darkblue: #010140; 
+    --peach: #EEA47FFF;
+    
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 105%;
+  /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: var(--peach);
+    color: white;
+    text-align: right;
+}
+
+
+
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+

@@ -1,0 +1,86 @@
+:root {
+    --blue: #00539CFF;
+    --darkblue: #010140; 
+    --peach: #EEA47FFF;
+    
+}
+
+/*home page/index page css*/
+
+.homebanner {
+    width: 90%;
+    height: 400px;
+    background-color: navajowhite;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -10px;
+    padding-top: 180px;
+    font-family: Arial, sans-serif;
+    
+}
+
+.homebanner h1{
+    font-size: 70px;
+    margin-bottom: 2px;
+}
+
+.homebanner h2{
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+
+.shopnowbutton{
+    font-family: Arial, sans-serif;;
+    font-size: 30px;
+    height: 40px;
+    background-color: navajowhite;
+    border: none;
+}
+
+.shopnowbutton:hover{
+    text-decoration: underline;
+    
+}
+
+
+/*about page css*/
+
+.aboutsectionscontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.aboutsectionitem{
+    background-color: var(--darkblue);
+    color: white;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 20px;
+}
+
+.aboutsubtitle{
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.abouttext{
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.contextlinks{
+    text-decoration: none;
+    color: var(--peach);
+    font-style: italic;
+}
+
+.contextlinks:hover{
+    text-decoration: underline;
+}
+
+.aboutimage{
+    width: 100%;
+}
