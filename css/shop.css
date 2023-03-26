@@ -24,6 +24,11 @@
     padding-bottom: 20px;
     margin-top: -20px;
     margin-bottom: 5px;
+    box-shadow: 5px 10px 10px #888;
+}
+
+.categoryitem:hover{
+    box-shadow: 10px 20px 10px #888;
 }
 
 .shopcategoryimage{
@@ -44,12 +49,15 @@ a{
     text-decoration: none;
 }
 
+
+
 /*media query for shop page*/
 
 @media only screen and (max-width: 800px) {
     .categorycontainer{
         flex-direction: column;
     }
+    
     .categoryitem{
         display: block;
         margin-left: auto;
@@ -70,8 +78,7 @@ a{
     font-size: 90px;
     text-align: center;
     margin-top: -10px;
-    margin-bottom: 2px;
-    
+    margin-bottom: 2px; 
 }
 
 .imagecontainer{
