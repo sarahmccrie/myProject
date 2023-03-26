@@ -1,9 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/loginpages.css">
+</head>
+
+<body>
+    
+
 <?php # Script 10.5 - #5
 // This script retrieves all the records from the users table.
 // This new version allows the results to be sorted in different ways.
 
 $page_title = 'View the Current Users';
-include('includes/header.html');
+include('includes/header.php');
+?>
+    
+<div class="boxarea">
+    
+<?php
 echo '<h1>Registered Users</h1>';
 
 require('../mysqli_connect.php');
@@ -120,6 +137,11 @@ if ($pages > 1) {
 	echo '</p>'; // Close the paragraph.
 
 } // End of links section.
+    
 
 include('includes/footer.html');
 ?>
+    </div>
+    </body>
+</html>
+    

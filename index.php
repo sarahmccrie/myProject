@@ -8,7 +8,7 @@
 <title>Welcome</title>
 </head>
 <body>
-    <?php include('includes/header.html');?>
+    <?php include('includes/header.php');?>
    
         <div class="homebanner">
             <h1 class="welcomebanner">Welcome</h1>

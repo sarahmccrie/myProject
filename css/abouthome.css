@@ -1,8 +1,8 @@
 :root {
     --blue: #00539CFF;
     --darkblue: #010140; 
-    --peach: #EEA47FFF;
-    
+    --peach: #EEA47FFF;  
+    --arial: 'Arial, sans-serif';
 }
 
 /*home page/index page css*/

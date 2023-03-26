@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
-    <?php include('includes/header.html');?>
+    <?php include('includes/header.php');?>
 
     <div class="catproducts">
         <h2 class="sectionlabel">Cat Products</h2>

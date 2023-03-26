@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-include('includes/header.html');
+include('includes/header.php');
 ?>
     <div class="aboutsectionscontainer">
         <div class="aboutsectionitem">

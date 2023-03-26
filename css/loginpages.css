@@ -1,0 +1,29 @@
+:root {
+    --blue: #00539CFF;
+    --darkblue: #010140; 
+    --peach: #EEA47FFF;
+}
+
+.boxarea{
+    background-color: navajowhite;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 40px;
+}
+
+h1{
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.boxarea p{
+    font-size: 24px;
+    font-family: font-family: Arial, sans-serif;
+}
+
+.userinfo{
+    width: 200px;
+    height: 20px;
+}
+

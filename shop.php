@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
-    <?php include('includes/header.html');?>
+    <?php include('includes/header.php');?>
     <div class="categorycontainer">
         <a href="art.php">
             <div class="categoryitem">
