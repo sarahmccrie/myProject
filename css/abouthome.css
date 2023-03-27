@@ -1,8 +1,9 @@
+/*variable declaration to use for easy colouring*/
 :root {
-    --blue: #00539CFF;
     --darkblue: #010140; 
     --peach: #EEA47FFF;  
     --muteyellow: #f6f3ee;
+    --mutebrown:#aa846e;
 }
 
 
@@ -42,6 +43,7 @@
 
 .shopnowbutton:hover{
     text-decoration: underline;
+    color: var(--mutebrown);
     
 }
 
@@ -49,7 +51,6 @@
 /*about page css*/
 
 /*flex box*/
-
 .aboutsectionscontainer{
     display: flex;
     flex-direction: row;
@@ -64,9 +65,7 @@
     justify-content: space-around;
     margin: 10px;
     padding: 20px;
-    margin-top: auto;
-    
-    
+    margin-top: auto; 
 }
 
 /*text adjustments*/
@@ -85,14 +84,20 @@
 .aboutimagecaption{
     font-size: 14px;
     font-family: Arial, sans-serif;
+    text-align: right;
 }
 
-/*contextual links css*/
+.freddiecursor:hover{
+    cursor: url("/images/other/freddie.jpg");
+}
 
+
+/*contextual links css*/
 .contextlinks{
     text-decoration: none;
-    color: var(--peach);
+    color: var(--mutebrown);
     font-style: italic;
+    font-weight: bold;
 }
 
 .contextlinks:hover{
@@ -103,9 +108,10 @@
     width: 100%;
 }
 
-/*media queries*/
+/*media queries with max-width 800px*/
 @media only screen and (max-width: 800px) {
     .aboutsectionscontainer{
+        /*change flex direction from row to column*/
         flex-direction: column;
     }
 }

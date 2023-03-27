@@ -1,10 +1,11 @@
 /*variable declaration to use for easy colouring*/
 :root {
-    --blue: #00539CFF;
     --darkblue: #010140; 
     --peach: #EEA47FFF;  
     --muteyellow: #f6f3ee;
+    --mutebrown:#aa846e;
 }
+
 
 
 /*navbar css to use in header.php*/
@@ -18,15 +19,18 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
 }
 
 #navbar a:hover {
-    background-color: #f6f3ee;
+    background-color: var(--muteyellow);
     color: black;
     font-weight: bold;
+    
+    
 }
 
 
@@ -40,7 +44,7 @@
 
 /*variation for the cart link*/
 .activecart{
-    background-color: var(--muteyellow);
+    background-color: var(--mutebrown);
 }
 
 /*div to separate search and cart options from left-floating links*/
@@ -71,6 +75,12 @@
     margin-right: 20px;
 }
 
+.gobutton:hover{
+    background-color: var(--mutebrown);
+    font-weight: bold;
+    color: white;
+}
+
 
 /*css for cart image on navbar*/
 .cartnaviconimage{
@@ -78,8 +88,8 @@
     height: 16px;
 }
 
-/*css to keep nav on top of page*/
 
+/*css to keep nav on top of page*/
 .content {
   padding: 16px;
 }

@@ -1,11 +1,11 @@
 /*this file contains the css for shop pages - shop, art and petproduct*/
 
+/*variable declaration to use for easy colouring*/
 :root {
-    --blue: #00539CFF;
     --darkblue: #010140; 
-    --peach: #EEA47FFF;
+    --peach: #EEA47FFF;  
     --muteyellow: #f6f3ee;
-    
+    --mutebrown:#aa846e;
 }
 
 /*css for the shop page*/
@@ -17,7 +17,7 @@
 }
 
 .categoryitem{    
-    background-color: var(--darkblue);
+    background-color: var(--mutebrown);
     color: white;
     width: 100%;
     justify-content: space-around;
@@ -137,7 +137,7 @@ a{
 }
 
 
-/*media queries */
+/*media queries with max-width 800px*/
 
 @media only screen and (max-width: 800px) {
 /* for shop page*/

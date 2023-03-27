@@ -1,0 +1,97 @@
+/*this file contains the css for the cart.php page*/
+
+/*variable declaration to use for easy colouring*/
+:root {
+    --darkblue: #010140; 
+    --peach: #EEA47FFF;  
+    --muteyellow: #f6f3ee;
+    --mutebrown:#aa846e;
+}
+
+.pageheading{
+    text-align: center;
+}
+
+/*contains all cartitemcontainers*/
+.cartcontainer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--muteyellow);
+    padding: 40px;
+}
+
+/*contains all cartitems - */
+.cartitemcontainer{
+    
+}
+
+/*contains productimage and cartiteminfo -flex the image and the iteminfo side-by-side*/
+.cartitem{
+    display: flex;
+    flex-direction: row;
+}
+
+.cartiteminfo{
+    padding-left: 40px;
+}
+
+/*css for sizing product image*/
+.productimage{
+    width: 250px;
+    margin-left: 5%;
+    
+}
+
+/*css for quantity input section*/
+.quantinput{
+    width: 40px;
+    
+}
+
+.removefromcartbutton{
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.removefromcartbutton:hover{
+    background-color: var(--mutebrown);
+    color: white;
+    font-weight: bold;
+}
+
+.total{
+    text-align: right;
+}
+
+.continuetopaymentbutton{
+    padding: 5px;
+    margin-top: 15px;
+    text-align: center;
+    float: right;
+}
+
+.continuetopaymentbutton:hover{
+    background-color: var(--mutebrown);
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/*media queries for max-width 800px*/
+@media only screen and (max-width: 800px) {
+    .cartitem{
+        flex-direction: column;
+    }
+    
+    .productimage{
+        width: 350px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cartiteminfo{
+        padding-left: 0;
+    }
+}

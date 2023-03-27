@@ -1,8 +1,9 @@
+/*variable declaration to use for easy colouring*/
 :root {
-    --blue: #00539CFF;
     --darkblue: #010140; 
-    --peach: #EEA47FFF;
+    --peach: #EEA47FFF;  
     --muteyellow: #f6f3ee;
+    --mutebrown:#aa846e;
 }
 
 /*css for main div*/
@@ -14,6 +15,7 @@
     padding: 20px
 }
 
+/*special css for view_users.php*/
 #viewusersboxarea{
     width: 90%;
 }
@@ -48,7 +50,7 @@ hr{
     height: 40px;
     width: 180px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial, sans-serif;
     background-color: white;
     position: relative;
@@ -57,10 +59,13 @@ hr{
 }
 
 .usersubmit:hover{
-    background-color: var(--peach);
+    background-color: var(--mutebrown);
+    color: white;
+    font-weight: bold;
 }
 
 /*set font size of table containing list of registered users*/
-.userlist{
+.userlisttable{
     font-size: 18px;
+
 }

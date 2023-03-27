@@ -77,7 +77,7 @@ $q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d, %Y') 
 $r = @mysqli_query($dbc, $q); // Run the query.
 
 // Table header:
-echo '<table class="userlist" width="100%">
+echo '<table class="userlisttable" width="100%">
 <thead>
 <tr>
 	<th align="left"><strong>Edit</strong></th>
