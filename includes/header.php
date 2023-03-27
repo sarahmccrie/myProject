@@ -28,9 +28,11 @@
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/view_users.php") { ?> class="active" <?php } ?> href="view_users.php">View Users</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/password.php") { ?> class="active" <?php } ?> href="password.php">Change Password</a>
         
-        <div class="navbarsearch"><input class="searchbar" type="text" placeholder="Search"><button class="gobutton" type="submit">Go</button></div>
+        <div class="rightfloatsection">
+        <div class="navbarsearch"><input class="searchbarforinput" type="text" placeholder="Search"><button class="gobutton" type="submit">Go</button></div>
         
-        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/cart.php") { ?> class="active" <?php } ?> href="cart.php">Cart</a>
+        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/cart.php") { ?> class="activecart" <?php } ?> id="cartnavicon" href="cart.php"><img class="cartnaviconimage" src="images/other/cart.png"></a>
+        </div>
 
 
     </nav>

@@ -8,8 +8,8 @@
 
 /*home page/index page css*/
 .homebanner {
-    width: 94%;
-    height: 400px;;
+    width: 100%;
+    height: 400px;
     background-image: url("/myProject/images/other/mutedgif.gif");
     background-color: var(--muteyellow);
     text-align: center;

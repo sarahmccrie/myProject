@@ -1,5 +1,4 @@
-/*Hex codes: Royal Blue #00539CFF, Peach #EEA47FFF*/
-
+/*variable declaration to use for easy colouring*/
 :root {
     --blue: #00539CFF;
     --darkblue: #010140; 
@@ -7,10 +6,8 @@
     --muteyellow: #f6f3ee;
 }
 
+
 /*navbar css to use in header.php*/
-
-
-
 #navbar {
   overflow: hidden;
   background-color: var(--peach);
@@ -32,6 +29,8 @@
     font-weight: bold;
 }
 
+
+/*css for the active page nav link*/
 .active {
     background-color: var(--darkblue);
     color: white;
@@ -39,22 +38,47 @@
 }
 
 
+/*variation for the cart link*/
+.activecart{
+    background-color: var(--muteyellow);
+}
+
+/*div to separate search and cart options from left-floating links*/
+.rightfloatsection{
+    float: right;
+    display: block;
+}
+
+/*css for search section*/
 .navbarsearch{
     float: left;
     display: block;
     color: white;
     text-align: center;
-    padding: 14px;
+    padding-top: 12px;
     text-decoration: none;
-    font-size: 17px;
-    
+    font-size: 17px;  
+}
+
+.searchbarforinput{
+    height: 19px;
+    margin-left: 20px;   
 }
 
 .gobutton{
-    padding: 2px;
-    font-size: 12px;
+    padding: 3px;
+    font-size: 13px;
+    margin-right: 20px;
 }
 
+
+/*css for cart image on navbar*/
+.cartnaviconimage{
+    width: 20px;
+    height: 16px;
+}
+
+/*css to keep nav on top of page*/
 
 .content {
   padding: 16px;
