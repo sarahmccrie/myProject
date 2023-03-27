@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/loginpages.css">
 </head>
+<body>
 
 <?php # Script 9.5 - register.php #2
 // This script performs an INSERT query to add a record to the users table.
@@ -109,3 +110,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 </div>
 <?php include('includes/footer.html'); ?>
+</body>
+</html>

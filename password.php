@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/loginpages.css">
 </head>
+<body>
 
 <?php
 // This page lets a user change their password.
@@ -115,3 +116,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
     </div>
 <?php include('includes/footer.html'); ?>
+</body>
+</html>

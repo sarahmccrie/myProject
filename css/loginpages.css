@@ -20,7 +20,7 @@ h1{
 
 .boxarea p{
     font-size: 24px;
-    font-family: font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .userinfo{
@@ -33,9 +33,11 @@ h1{
     width: 210px;
     margin-top: 20px;
     font-size: 20px;
+    font-family: Arial, sans-serif;
+    
 }
 
 .usersubmit:hover{
-    background-color: darkgrey;
+    background-color: var(--peach);
 }
 

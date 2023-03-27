@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/loginpages.css">
 </head>
-
 <body>
     
 
@@ -141,7 +140,7 @@ if ($pages > 1) {
 
 include('includes/footer.html');
 ?>
-    </div>
-    </body>
+</div>
+</body>
 </html>
     
