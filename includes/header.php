@@ -13,12 +13,23 @@
         
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/index.php") { ?> class="active" <?php } ?> href="index.php">Home</a>
         
-        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/shop.php") { ?> class="active" <?php } ?> href="shop.php">Shop Our Store</a>
         
+        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/shop.php") { ?> class="active" <?php } ?> id= "dropdown" href="shop.php">Shop Our Store</a>
+<!--
+            <div class="hiddenuntilhover">
+                <a href="art.php" >Personalized Pet Portraits</a>
+                <a href="petproducts.php">Pet Products</a>
+            </div>
+-->
+        
+            
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/about.php") { ?> class="active" <?php } ?> href="about.php">About</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/register.php") { ?> class="active" <?php } ?> href="register.php">Register</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/view_users.php") { ?> class="active" <?php } ?> href="view_users.php">View Users</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/password.php") { ?> class="active" <?php } ?> href="password.php">Change Password</a>
+        
+        <div class="navbarsearch"><input class="searchbar" type="text" placeholder="Search"><button class="gobutton" type="submit">Go</button></div>
+        
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/cart.php") { ?> class="active" <?php } ?> href="cart.php">Cart</a>
 
 

@@ -5,39 +5,62 @@
     --muteyellow: #f6f3ee;
 }
 
+/*css for main div*/
 .boxarea{
     background-color: var(--muteyellow);
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    padding: 40px;
+    width: 400px;
+    padding: 20px
 }
 
-h1{
-    font-size: 40px;
-    font-family: Arial, sans-serif;
+#viewusersboxarea{
+    width: 90%;
 }
 
 .boxarea p{
-    font-size: 24px;
+    font-size: 18px;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
 
+h1{
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+hr{
+    margin-bottom: 30px;
+}
+
+/*css for user input/text boxes*/
 .userinfo{
-    width: 200px;
-    height: 20px;
+    width: 140px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
 }
 
+/*css for submit buttons on register.php and password.php*/
 .usersubmit{
     height: 40px;
-    width: 210px;
+    width: 180px;
     margin-top: 20px;
     font-size: 20px;
     font-family: Arial, sans-serif;
-    
+    background-color: white;
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;  
 }
 
 .usersubmit:hover{
     background-color: var(--peach);
 }
 
+/*set font size of table containing list of registered users*/
+.userlist{
+    font-size: 18px;
+}

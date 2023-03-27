@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php include('includes/header.php');?>
-
+    <div class="allproductsarea">
     <div class="catproducts">
         <h2 class="sectionlabel">Cat Products</h2>
         <div class="imagecontainer">
@@ -83,6 +83,7 @@
             }
         ?>
         </div>
+    </div>
     </div>
     
     

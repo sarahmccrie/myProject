@@ -7,12 +7,11 @@
 
 
 /*home page/index page css*/
-
 .homebanner {
     width: 94%;
     height: 400px;;
     background-image: url("/myProject/images/other/mutedgif.gif");
-/*    background-color: var(--muteyellow);*/
+    background-color: var(--muteyellow);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -25,6 +24,7 @@
 .homebanner h1{
     font-size: 70px;
     margin-bottom: 2px;
+    margin-top: 65px;
 }
 
 .homebanner h2{
@@ -37,7 +37,6 @@
     font-family: Arial, sans-serif;;
     font-size: 30px;
     height: 40px;
-    background-color: (--muteyellow);
     border: none;
 }
 
@@ -71,7 +70,6 @@
 }
 
 /*text adjustments*/
-
 .aboutsubtitle{
     font-size: 30px;
     font-family: Arial, sans-serif;
@@ -81,6 +79,11 @@
 
 .abouttext{
     font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.aboutimagecaption{
+    font-size: 14px;
     font-family: Arial, sans-serif;
 }
 
@@ -98,4 +101,11 @@
 
 .aboutimage{
     width: 100%;
+}
+
+/*media queries*/
+@media only screen and (max-width: 800px) {
+    .aboutsectionscontainer{
+        flex-direction: column;
+    }
 }

@@ -21,6 +21,7 @@ include('includes/header.php');
         </div>
         <div class="aboutsectionitem">
             <img class="aboutimage" src="images/other/me.png" alt="photo of creator">
+            <p class="aboutimagecaption">This is my little girl, Maisie (on right), just over 5 years ago. She is now around 150lbs and not the only big baby in my life; her little sister is 140lbs of Leonberger, and our little guy, Freddie, is a 12 month old Maine Coon.</p>
         </div>
     </div>
 <?php

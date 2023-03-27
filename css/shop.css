@@ -51,28 +51,13 @@ a{
 
 
 
-/*media query for shop page*/
 
-@media only screen and (max-width: 800px) {
-    .categorycontainer{
-        flex-direction: column;
-    }
-    
-    .categoryitem{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 30px;
-        
-    }
-    
-    .shopcategoryimage{
-        display: block;
-        max-width: 80%;
-    }
-}
 
 /* css for art and petproduct pages*/
+
+.allproductsarea{
+    margin-top: -30px;
+}
 
 .pageheading{
     font-size: 90px;
@@ -134,6 +119,7 @@ a{
     background-color: lightpink;
 }
 
+/*css for the images/icons used for the like and addtocart buttons*/
 .buttonimage{
     width: 26px;
     padding-top: 4px;
@@ -141,13 +127,41 @@ a{
 }
 
 
-
 /*products page*/
-
 .sectionlabel{
-    font-size: 50px;
+    font-size: 56px;
     padding-left: 36px;
     margin-bottom: 0;
-    font-family: Arial, sans-serif;
     margin-top: 0px;
+    text-align: center;
+}
+
+
+/*media queries */
+
+@media only screen and (max-width: 800px) {
+/* for shop page*/
+    .categorycontainer{
+        flex-direction: column;
+    }
+    
+    .categoryitem{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 30px;
+        
+    }
+    
+    .shopcategoryimage{
+        display: block;
+        max-width: 80%;
+    }
+    
+/*for art.php and petproducts.php   */
+    
+    .pageheading{
+        font-size: 50px;
+    
+    
 }

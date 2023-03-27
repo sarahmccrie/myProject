@@ -17,7 +17,7 @@ $page_title = 'View the Current Users';
 include('includes/header.php');
 ?>
     
-<div class="boxarea">
+<div id="viewusersboxarea" class="boxarea">
     
 <?php
 echo '<h1>Registered Users</h1>';
@@ -77,7 +77,7 @@ $q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d, %Y') 
 $r = @mysqli_query($dbc, $q); // Run the query.
 
 // Table header:
-echo '<table width="60%">
+echo '<table class="userlist" width="100%">
 <thead>
 <tr>
 	<th align="left"><strong>Edit</strong></th>
