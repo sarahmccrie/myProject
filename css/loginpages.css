@@ -6,9 +6,16 @@
     --mutebrown:#aa846e;
 }
 
+hr {
+  height: 2px;
+  background-color: white;
+  border: none;
+}
+
 /*css for main div*/
 .boxarea{
     background-color: var(--muteyellow);
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
@@ -68,4 +75,19 @@ hr{
 .userlisttable{
     font-size: 18px;
 
+}
+
+.messageheader{
+    text-align: center;
+    font-size: 40px;
+}
+
+.messagetext{
+    text-align: center;
+    font-size: 20px;
+}
+
+.error{
+    text-align: center;
+    font-size: 20px;
 }

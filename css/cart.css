@@ -8,6 +8,12 @@
     --mutebrown:#aa846e;
 }
 
+hr {
+  height: 2px;
+  background-color: white;
+  border: none;
+}
+
 .pageheading{
     text-align: center;
 }
@@ -18,9 +24,10 @@
     flex-direction: column;
     background-color: var(--muteyellow);
     padding: 40px;
+    margin-top: 5px;
 }
 
-/*contains all cartitems - */
+/*contains all cartitems - will be used when switched to php*/
 .cartitemcontainer{
     
 }
@@ -44,8 +51,7 @@
 
 /*css for quantity input section*/
 .quantinput{
-    width: 40px;
-    
+    width: 40px; 
 }
 
 .removefromcartbutton{
@@ -67,6 +73,9 @@
     padding: 5px;
     margin-top: 15px;
     text-align: center;
+    margin-bottom: 20px;
+    width: 200px;
+    position: relative;
     float: right;
 }
 
@@ -85,7 +94,7 @@
     }
     
     .productimage{
-        width: 350px;
+        width: 90%
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -94,4 +103,9 @@
     .cartiteminfo{
         padding-left: 0;
     }
+    
+    .cartcontainer{
+        margin-top: -30px;
+    }
+    
 }

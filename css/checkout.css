@@ -1,0 +1,71 @@
+/*css for checkout.php*/
+:root {
+    --darkblue: #010140; 
+    --peach: #EEA47FFF;  
+    --muteyellow: #f6f3ee;
+    --mutebrown:#aa846e;
+}
+
+.splitscreen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.sectionflexcontainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.infoareaitem{
+    background-color: var(--muteyellow);
+    
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    margin: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sectionheader{
+    font-size: 24px;
+}
+
+.inputlabel{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.inputfield{
+    height: 20px;
+    width: 150px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+
+.boxes{
+    height: 30px;
+}
+
+@media only screen and (max-width: 980px) {
+    .splitscreen{
+        flex-direction: column-reverse;
+    }
+    
+    iframe{
+        width:96%;
+    }
+    
+    .infoareaitem{
+        margin-left: 0;
+        width: 100%;
+    }
+}

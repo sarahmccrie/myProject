@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/abouthome.css">
-
-<title>Welcome</title>
+    <title>Welcome</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sarah McCrie">
+    <meta name="description" content="this is my index page">
+    <!-- Author:      Sarah McCrie
+        Program:      myProject
+        Date:         [03-16-2023]
+        Updated:      [03-27-2023] 
+        Version:      1.0     
+        Description:  This is my index page
+    -->
+    <link rel="stylesheet" href="css/indexabout.css">
 </head>
 <body>
     <?php include('includes/header.php');?>
 
-        <div class="homebanner">
+        <div class="bannercard">
             <h1 class="welcomebanner">Welcome</h1>
             <button class="shopnowbutton" onclick='location.href="shop.php"'>Shop Our Store</button>
 

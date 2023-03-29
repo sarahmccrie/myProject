@@ -6,9 +6,16 @@
     --mutebrown:#aa846e;
 }
 
+hr{
+  height: 2px;
+  background-color: white;
+  border: none;
+}
 
-/*home page/index page css*/
-.homebanner {
+
+/*index page css*/
+/*css for main banner/title card*/
+.bannercard {
     width: 100%;
     height: 400px;
     background-image: url("/myProject/images/other/mutedgif.gif");
@@ -16,24 +23,20 @@
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -30px;
+    margin-top: 10px;
     margin-bottom: -10px;
     padding-top: 190px;
     font-family: Arial, sans-serif;
 }
 
-.homebanner h1{
+/*css for title on bannercard*/
+.welcomebanner{
     font-size: 70px;
     margin-bottom: 2px;
     margin-top: 65px;
 }
 
-.homebanner h2{
-    font-size: 30px;
-    margin-top: 0px;
-}
-
-
+/*css for shop now button on h2*/
 .shopnowbutton{
     font-family: Arial, sans-serif;;
     font-size: 30px;
@@ -55,7 +58,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: -20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
@@ -87,10 +90,6 @@
     text-align: right;
 }
 
-.freddiecursor:hover{
-    cursor: url("/images/other/freddie.jpg");
-}
-
 
 /*contextual links css*/
 .contextlinks{
@@ -105,7 +104,22 @@
 }
 
 .aboutimage{
-    width: 100%;
+    width: 350px;
+}
+
+
+
+.imgchangebutton{
+    border: none;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    color: var(--mutebrown);
+}
+
+.imgchangebutton:hover{
+    cursor: pointer;
 }
 
 /*media queries with max-width 800px*/
@@ -114,4 +128,17 @@
         /*change flex direction from row to column*/
         flex-direction: column;
     }
+    
+    .aboutimage{
+        width: 100%;
+    }
+    
+    .aboutimagecaption{
+        font-size: 16px;
+    }
+    
+    .imgchangebutton{
+        font-size: 16px;
+    }
+    
 }
