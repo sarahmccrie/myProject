@@ -68,11 +68,18 @@ a{
     font-size: 70px;
     text-align: center;
     margin-top: 20px;
-    padding-top: 10px;
+    padding-top: 5px;
     margin-bottom: 2px; 
+    font-family: Arial, sans-serif;
 }
 
 /*contains imageitems, images, addtocartbuttons, likebuttons*/
+.productname{
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    padding-bottom: 4px;
+}
+
 .imagecontainer{
     display: flex;
     flex-direction: row;

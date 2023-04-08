@@ -6,7 +6,6 @@
     mysqli_close($dbc);  
 ?>
 <script>
-    alert("Thank you for your interest in buying this item!");
-    window.history.go(-1);
-    window.location.reload(true);
+    alert("Thank you for your interest in buying this item! We hope the cart becomes available soon!");
+    window.location.href = '<?php echo $_SERVER['HTTP_REFERER'] ?>';
 </script>

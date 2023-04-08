@@ -55,7 +55,9 @@
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
                 </form>';
                 
-                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+                $productnamediv = '<div class="productname">' . $product_name . '</div>';
+
+                $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
                 echo $imageitem; 
             }
@@ -104,7 +106,9 @@
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
                 </form>';
                 
-                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+                $productnamediv = '<div class="productname">' . $product_name . '</div>';
+
+                $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
                 echo $imageitem; 
             }
@@ -153,7 +157,9 @@
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
                 </form>';
                 
-                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+                $productnamediv = '<div class="productname">' . $product_name . '</div>';
+
+                $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
                 echo $imageitem; 
             }

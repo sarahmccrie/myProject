@@ -7,6 +7,5 @@
 ?>
 <script>
     alert("You've liked this item!");
-    window.history.go(-1);
-    location.reload();
+    window.location.href = '<?php echo $_SERVER['HTTP_REFERER'] ?>';
 </script>
