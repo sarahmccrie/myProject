@@ -23,25 +23,47 @@
         <h2 class="sectionlabel">Cat Products</h2>
         <div class="imagecontainer">
         <?php
-            $addtocartbutton = '<button class="addtocartbutton" type="button">
-            <img class="buttonimage" src="images/other/cart.png"></button>'; 
-            $likebutton = '<button class="likebutton" type="button"><img class="buttonimage" src="images/other/like.png"></button>';
-            $imageitem = '<div class="imageitem">replaceme' . $likebutton . $addtocartbutton . '</div>';
-            
-       
+            require('../mysqli_connect.php'); 
+        
             $imagetag = '<img class="images" src="images/petproducts/cats/replaceme">';
+        
             $path = 'images/petproducts/cats';
+        
             $files = array_diff(scandir($path), array('.', '..'));
+        
             foreach ($files as $thisimagename) {
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
-            
-                $theimage = str_replace('replaceme', $thisimagename, $imagetag);
-                $theimageitem = str_replace('replaceme', $theimage, $imageitem);
-                echo $theimageitem;
+                $query = "SELECT product_id, product_name, likes, carts FROM cat_products WHERE image_name = '$thisimagename'";
+                $result = mysqli_query($dbc, $query);
+                $row = mysqli_fetch_array($result);
+                $item_id = $row['product_id'];
+                $product_name = $row['product_name'];
+                $likes = $row['likes'];
+                $carts = $row['carts'];
+                
+                $likebutton = '<form method="post" action="add_like.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="likebutton" type="submit">
+                    <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
+                </form>';
+                
+                $addtocartbutton = '<form method="post" action="add_cart.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="addtocartbutton" type="submit">
+                    <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
+                </form>';
+                
+                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+
+                echo $imageitem; 
             }
+
+        mysqli_close($dbc); 
+        
         ?>
+
         </div>
     </div>
     <hr>
@@ -50,23 +72,47 @@
         <h2 class="sectionlabel">Dog Products</h2>
         <div class="imagecontainer">
         <?php
-            $addtocartbutton = '<button class="addtocartbutton" type="button">
-            <img class="buttonimage" src="images/other/cart.png"></button>'; 
-            $likebutton = '<button class="likebutton" type="button"><img class="buttonimage" src="images/other/like.png"></button>';
-            $imageitem = '<div class="imageitem">replaceme' . $likebutton . $addtocartbutton . '</div>';
+            require('../mysqli_connect.php'); 
+        
             $imagetag = '<img class="images" src="images/petproducts/dogs/replaceme">';
+        
             $path = 'images/petproducts/dogs';
+        
             $files = array_diff(scandir($path), array('.', '..'));
+        
             foreach ($files as $thisimagename) {
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
-            
-                $theimage = str_replace('replaceme', $thisimagename, $imagetag);
-                $theimageitem = str_replace('replaceme', $theimage, $imageitem);
-                echo $theimageitem;
+                $query = "SELECT product_id, product_name, likes, carts FROM dog_products WHERE image_name = '$thisimagename'";
+                $result = mysqli_query($dbc, $query);
+                $row = mysqli_fetch_array($result);
+                $item_id = $row['product_id'];
+                $product_name = $row['product_name'];
+                $likes = $row['likes'];
+                $carts = $row['carts'];
+                
+                $likebutton = '<form method="post" action="add_like.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="likebutton" type="submit">
+                    <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
+                </form>';
+                
+                $addtocartbutton = '<form method="post" action="add_cart.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="addtocartbutton" type="submit">
+                    <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
+                </form>';
+                
+                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+
+                echo $imageitem; 
             }
+
+        mysqli_close($dbc); 
+        
         ?>
+
         </div>
     </div>
     <hr>
@@ -75,23 +121,47 @@
         <h2 class="sectionlabel">Products for You</h2>
         <div class="imagecontainer">
         <?php
-            $addtocartbutton = '<button class="addtocartbutton" type="button">
-            <img class="buttonimage" src="images/other/cart.png"></button>'; 
-            $likebutton = '<button class="likebutton" type="button"><img class="buttonimage" src="images/other/like.png"></button>';
-            $imageitem = '<div class="imageitem">replaceme' . $likebutton . $addtocartbutton . '</div>';
+            require('../mysqli_connect.php'); 
+        
             $imagetag = '<img class="images" src="images/petproducts/foryou/replaceme">';
+        
             $path = 'images/petproducts/foryou';
+        
             $files = array_diff(scandir($path), array('.', '..'));
+        
             foreach ($files as $thisimagename) {
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
-            
-                $theimage = str_replace('replaceme', $thisimagename, $imagetag);
-                $theimageitem = str_replace('replaceme', $theimage, $imageitem);
-                echo $theimageitem;
+                $query = "SELECT product_id, product_name, likes, carts FROM foryou_products WHERE image_name = '$thisimagename'";
+                $result = mysqli_query($dbc, $query);
+                $row = mysqli_fetch_array($result);
+                $item_id = $row['product_id'];
+                $product_name = $row['product_name'];
+                $likes = $row['likes'];
+                $carts = $row['carts'];
+                
+                $likebutton = '<form method="post" action="add_like.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="likebutton" type="submit">
+                    <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
+                </form>';
+                
+                $addtocartbutton = '<form method="post" action="add_cart.php">
+                    <input type="hidden" name="product_id" value="' . $item_id . '">
+                    <button class="addtocartbutton" type="submit">
+                    <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
+                </form>';
+                
+                $imageitem = '<div class="imageitem">' . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
+
+                echo $imageitem; 
             }
+
+        mysqli_close($dbc); 
+        
         ?>
+
         </div>
     </div>
     </div>

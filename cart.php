@@ -19,8 +19,10 @@
 </head>
 <body>
     <?php include('includes/header.php'); ?>
-    <?php include('cartinternal.php'); ?>
-    <button class="continuetopaymentbutton" type="button" onclick="submitAndRedirectCheckout()">Continue to Payment</button>
+    <h1 class="pageheader">Coming Soon!</h1>
+    <hr>
+    <h2 class="subheader">For now, you can donate!</h2>
+    <button class="donatebutton" onclick='location.href="checkout.php"'>Donate Now</button>
    
     <?php include('includes/footer.html'); ?>
 <script src="scripts/validator.js"></script>

@@ -22,11 +22,10 @@
 
 .infoareaitem{
     background-color: var(--muteyellow);
-    
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 30px;
     margin: 20px;
     width: 80%;
     display: flex;
@@ -50,20 +49,36 @@
     margin-left: 2px;
 }
 
-
 .boxes{
-    height: 30px;
+    height: 26px;
+}
+
+.confirmdonation{
+    padding: 10px;
+}
+
+.confirmdonation:hover{
+    background-color: var(--mutebrown);
+    font-weight: bold;
+    color: white;
+}
+
+.donation-msg{
+    position: fixed;
+    left: 50%;
+    z-index: 2;
+    height: 300px;
+    width: 80%;
+    background-color: white;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, 0);
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 980px) {
-    .splitscreen{
-        flex-direction: column-reverse;
-    }
-    
-    iframe{
-        width:96%;
-    }
-    
     .infoareaitem{
         margin-left: 0;
         width: 100%;

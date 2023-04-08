@@ -14,6 +14,7 @@
         Description:  This is my checkout page
     -->
     <link rel="stylesheet" href="css/checkout.css">
+    
 <title>Checkout</title>
 </head>
 <body>
@@ -22,8 +23,18 @@
         <div class="splitscreen">
         <div class="sectionflexcontainer">
             <div class="infoareaitem">
-                <h1 class="sectionheader">Please Enter your Personal Information below:</h1>
-                <div class="labelandfield"><label class="inputlabel">Name:</label><input type="text" id="fname" class="inputfield" placeholder="first"><input id="lname" type="text" class="inputfield" placeholder="last"></div><br>
+                <h1 class="sectionheader">Please Enter Personal Information Below:</h1>
+                <div class="labelandfield"><label class="inputlabel">Name:</label><input type="text" id="fname" class="inputfield" placeholder="First Name"><input id="lname" type="text" class="inputfield" placeholder="Last Name"></div><br>
+                
+                <div class="labelandfield"><label class="inputlabel">Address:</label>
+                <input type="number" id="addressnum" min="1" placeholder="1234" class="inputfield"><input type="text" id="addressstreet" class="inputfield" placeholder="Main Street">
+                </div>
+                <br>
+                <div class="labelandfield">
+                    <label class="inputlabel">City:</label><input type="text" id="addresscity" class="inputfield" placeholder="Mississauga">
+                    <label class="inputlabel">Province:</label><input type="text" id="addressprovince" class="inputfield" placeholder="Ontario">
+                </div>
+                <br>
                 <label class="inputlabel">Country:</label>
                 <select name="country" id="country" class="boxes" required >
                     <option value="-1" name="selectcountry">Select</option>
@@ -33,7 +44,7 @@
                 </select>
             </div>
             <div class="infoareaitem">
-                <h1 class="sectionheader">Please Enter your Payment Information below:</h1>
+                <h1 class="sectionheader">Please Enter Payment Information Below:</h1>
                 <label class="inputlabel">Credit Card:</label>
                 <select name="creditcard" id="creditcard" required class="boxes">
                     <option value="-1" name="selectcountry">Select</option>
@@ -41,11 +52,14 @@
                     <option value="Visa">Visa</option>
                     <option value="American Express">American Express</option>
                 </select><br>
-                <div class="labelandfield"><label class="inputlabel">Total:</label><p id="displaytotal"></p></div>
-                <div class="labelandfield"><label class="inputlabel">Please input total to confirm order:</label><input type="text" class="inputfield"></div>
+                <label class="inputlabel">Credit Card Number:</label>
+                <input type="number" class="boxes" id="creditcardnum" minlength="16">
+                <br>
+                <div class="labelandfield"><label class="inputlabel">Please input total to confirm order:</label><input type="text" class="inputfield" id="donationamount"></div>
+                <br>
+                <button type="submit" class="confirmdonation" onclick="validateAndSubmit()">Confirm Donation</button>
             </div>
         </div>
-            <iframe src="cartinternal.php" width="40%" height="580px"></iframe>
         </div>
     </form>
     <?php include('includes/footer.html'); ?>

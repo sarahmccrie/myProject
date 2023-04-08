@@ -100,11 +100,8 @@ a{
     padding: 2px;
     margin-top: 10px;
     position: relative;
-    left: 80%;
-    color: var(--darkblue);
+    left: 275px;
     background-color: white;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 .addtocartbutton:hover{
@@ -115,8 +112,8 @@ a{
 .likebutton{
     background-color: white;
     width: 36px;
-    padding: 0px;
-    left: 75%;
+    padding: 2px;
+    left: 270px;
     margin-top: 10px;
     position: relative;
 }
