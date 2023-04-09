@@ -10,7 +10,7 @@
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
-        Updated:      [03-27-2023] 
+        Updated:      [04-09-2023] 
         Version:      1.0     
         Description:  This is my users page
     -->
@@ -24,24 +24,24 @@
     <div id="viewusersboxarea" class="boxarea"> 
     <?php
         echo '<h1>Registered Users</h1>';
-        require('../mysqli_connect.php');
+        require('../../mysqli_connect.php');
         $display = 15;
 
-    if (isset($_GET['p']) && is_numeric($_GET['p'])) { 
-	   $pages = $_GET['p'];
-    } else {
-	   $q = "SELECT COUNT(user_id) FROM users";
-	   $r = @mysqli_query($dbc, $q);
-	   $row = @mysqli_fetch_array($r, MYSQLI_NUM);
-	   $records = $row[0];
-	   if ($records > $display) { 
-		  $pages = ceil ($records/$display);
-	   } else {
-		  $pages = 1;
-	   }
+        if (isset($_GET['p']) && is_numeric($_GET['p'])) { 
+            $pages = $_GET['p'];
+        } else {
+            $q = "SELECT COUNT(user_id) FROM users";
+            $r = @mysqli_query($dbc, $q);
+            $row = @mysqli_fetch_array($r, MYSQLI_NUM);
+            $records = $row[0];
+        if ($records > $display) { 
+            $pages = ceil ($records/$display);
+        } else {
+            $pages = 1;
+        }
     }
     if (isset($_GET['s']) && is_numeric($_GET['s'])) {
-	   $start = $_GET['s'];
+        $start = $_GET['s'];
     } else {
 	   $start = 0;
     }
@@ -64,8 +64,9 @@
 		  break;
     }
     $q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, DATE_FORMAT(birthday, '%M %d, %Y') AS bd, user_id FROM users ORDER BY $order_by LIMIT $start, $display";
-    $r = @mysqli_query($dbc, $q); // Run the query.
+    $r = @mysqli_query($dbc, $q);
 
+    //display table with last name, first name, date registered and birthday
     echo '<table class="userlisttable" width="100%">
         <thead>
         <tr>

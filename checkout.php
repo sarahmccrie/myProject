@@ -14,29 +14,37 @@
         Description:  This is my checkout page
     -->
     <link rel="stylesheet" href="css/checkout.css">
-    
+    <script src="scripts/validator.js"></script>
 <title>Checkout</title>
 </head>
 <body>
     <?php include('includes/header.php'); ?>
-    <form action="checkout.php" method="post">
-        <div class="splitscreen">
+    <form method="post">
+    <div class="splitscreen">
         <div class="sectionflexcontainer">
             <div class="infoareaitem">
                 <h1 class="sectionheader">Please Enter Personal Information Below:</h1>
-                <div class="labelandfield"><label class="inputlabel">Name:</label><input type="text" id="fname" class="inputfield" placeholder="First Name"><input id="lname" type="text" class="inputfield" placeholder="Last Name"></div><br>
-                
-                <div class="labelandfield"><label class="inputlabel">Address:</label>
-                <input type="number" id="addressnum" min="1" placeholder="1234" class="inputfield"><input type="text" id="addressstreet" class="inputfield" placeholder="Main Street">
+                <div class="labelandfield">
+                    <label class="inputlabel">Name:</label>
+                    <input type="text" id="fname" class="inputfield" placeholder="First Name">
+                    <input type="text" id="lname" class="inputfield" placeholder="Last Name">
                 </div>
                 <br>
                 <div class="labelandfield">
-                    <label class="inputlabel">City:</label><input type="text" id="addresscity" class="inputfield" placeholder="Mississauga">
-                    <label class="inputlabel">Province:</label><input type="text" id="addressprovince" class="inputfield" placeholder="Ontario">
+                    <label class="inputlabel">Address:</label>
+                    <input type="number" id="addressnum" min="1" placeholder="1234" class="inputfield">
+                    <input type="text" id="addressstreet" class="inputfield" placeholder="Main Street">
+                </div>
+                <br>
+                <div class="labelandfield">
+                    <label class="inputlabel">City:</label>
+                    <input type="text" id="addresscity" class="inputfield" placeholder="Mississauga">
+                    <label class="inputlabel">Province:</label>
+                    <input type="text" id="addressprovince" class="inputfield" placeholder="Ontario">
                 </div>
                 <br>
                 <label class="inputlabel">Country:</label>
-                <select name="country" id="country" class="boxes" required >
+                <select name="country" id="country" class="boxes" required>
                     <option value="-1" name="selectcountry">Select</option>
                     <option value="Canada">Canada</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -51,19 +59,22 @@
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                     <option value="American Express">American Express</option>
-                </select><br>
+                </select>
+                <br>
                 <label class="inputlabel">Credit Card Number:</label>
                 <input type="number" class="boxes" id="creditcardnum" minlength="16">
                 <br>
-                <div class="labelandfield"><label class="inputlabel">Please input total to confirm order:</label><input type="text" class="inputfield" id="donationamount"></div>
+                <div class="labelandfield">
+                    <label class="inputlabel">Please input total to confirm order:</label>
+                    <input type="text" class="inputfield" id="donationamount">
+                </div>
                 <br>
-                <button type="submit" class="confirmdonation" onclick="validateAndSubmit()">Confirm Donation</button>
+                <button type="button" class="confirmdonation" onclick="validateAndSubmit()">Confirm Donation</button>
             </div>
         </div>
-        </div>
-    </form>
+    </div>
+</form> 
     <?php include('includes/footer.html'); ?>
-    <script src="scripts/validator.js"></script>
-    <!--  end php section for cart items -->
+    
 </body>
 </html>

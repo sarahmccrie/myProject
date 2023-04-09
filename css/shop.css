@@ -1,6 +1,5 @@
 /*this file contains the css for shop pages - shop, art and petproduct*/
 
-
 /*variable declaration to use for easy colouring*/
 :root {
     --darkblue: #010140; 
@@ -9,6 +8,7 @@
     --mutebrown:#aa846e;
 }
 
+/*change ccs of horizontal lines*/
 hr {
   height: 2px;
   background-color: var(--mutebrown);
@@ -22,7 +22,6 @@ hr {
     flex-direction: row;
     justify-content: space-around;
 }
-
 
 /*contains shopcategoryimages and tiledesciption headers*/
 .categoryitem{    
@@ -54,17 +53,31 @@ hr {
     font-family: sans-serif;
 }
 
+/*remove decoration from links*/
 a{
     text-decoration: none;
 }
-
 
 /* css for art and petproduct pages*/
 .allproductsarea{
     margin-top: 10px;
 }
 
+.productname{
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    padding-bottom: 4px;
+}
+
+.catproducts, .dogproducts, .foryou{
+    background-color: var(--muteyellow);
+    padding-top: 8px;
+}
+
+/*pet portraits heading*/
 .pageheading{
+    background-color: var(--muteyellow);
+    padding: 10px;
     font-size: 70px;
     text-align: center;
     margin-top: 20px;
@@ -73,21 +86,17 @@ a{
     font-family: Arial, sans-serif;
 }
 
-/*contains imageitems, images, addtocartbuttons, likebuttons*/
-.productname{
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-    padding-bottom: 4px;
-}
-
+/*holds all imageitems*/
 .imagecontainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     padding-bottom: 30px;
+    background-color: var(--muteyellow);
 }
 
+/*holds images, name, and buttons*/
 .imageitem{
     display: flex;
     margin: 20px;
@@ -95,13 +104,16 @@ a{
     flex-wrap: wrap;
     max-width: 340px;
     box-shadow: 5px 10px 10px #888;
+    background-color: white;
 }
 
+/*set image size*/
 .images{
     width: 340px;
     height: 340px;
 }
 
+/*cart button*/
 .addtocartbutton{
     width:  36px;
     padding: 2px;
@@ -116,6 +128,7 @@ a{
     color: white;
 }
 
+/*like button*/
 .likebutton{
     background-color: white;
     width: 36px;
@@ -136,17 +149,25 @@ a{
     padding-bottom: 2px;
 }
 
-
-/*products page*/
+/*for petproducts page*/
 .sectionlabel{
     font-size: 56px;
     padding-left: 36px;
     margin-bottom: 0;
     margin-top: 0px;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
+/*for search.php only*/
 
+/*appears if no matches are found*/
+.nomatch{
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background-color: var(--muteyellow);
+}
 
 /*media queries with max-width 800px*/
 @media only screen and (max-width: 800px) {
@@ -171,6 +192,12 @@ a{
     .pageheading{
         /* change to 50px when screen is smaller than 800px*/
         font-size: 50px;
+        margin-left: -18px;
+        margin-right: -18px;
+    }
     
-    
+    .imagecontainer{
+        margin-left: -18px;
+        margin-right: -18px;
+    }  
 }

@@ -22,7 +22,14 @@
     
     <div class="imagecontainer">
         <?php
-            require('../mysqli_connect.php'); 
+        //str_contains not built in to php 8 - fix for cpanel purposes
+        if (!function_exists('str_contains')) {
+            function str_contains($haystack, $needle){
+                return (strpos($haystack, $needle) !== false);
+            }
+        }
+            //open db connection
+            require('../../mysqli_connect.php'); 
         
             $imagetag = '<img class="images" src="images/art/replaceme">';
         
@@ -34,6 +41,7 @@
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
+                //for any images in images/art that match image_name in artitems table of db
                 $query = "SELECT product_id, product_name, likes, carts FROM artitems WHERE image_name = '$thisimagename'";
                 $result = mysqli_query($dbc, $query);
                 $row = mysqli_fetch_array($result);
@@ -42,13 +50,15 @@
                 $likes = $row['likes'];
                 $carts = $row['carts'];
                 
-                $likebutton = '<form method="post" action="add_like.php">
+                //like button functionality and declaration - calls add_like.php
+                $likebutton = '<form method="post" action="scripts/add_like.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
-                $addtocartbutton = '<form method="post" action="add_cart.php">
+                //cart button functionality and declaration - calls add_cart.php
+                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -58,12 +68,13 @@
 
                 $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
+                //show the imageitem
                 echo $imageitem; 
                 
             }
-
-        mysqli_close($dbc); 
         
+        //close the db connection
+        mysqli_close($dbc); 
         ?>
     </div>
      <?php include('includes/footer.html');?>

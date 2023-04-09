@@ -36,9 +36,7 @@
     background-color: var(--muteyellow);
     color: black;
     font-weight: bold;
-    padding: 14px 10px;
-    
-    
+    padding: 14px 10px; 
 }
 
 
@@ -73,7 +71,11 @@
 }
 
 .searchbarforinput{
-    height: 19px;  
+    height: 22px;  
+}
+
+#item-container{
+    display: none;
 }
 
 .gobutton{
@@ -97,13 +99,18 @@
 
 @media only screen and (max-width: 800px) {
     #navbar{
-        height: 60px;
-        margin-bottom: 10px;
+        height: 70px;
     }
     
     #navbar a {
-        padding: 6px;
-        font-size: 16px;
+        padding: 8px 4px;
+        font-size: 14px;
+    }
+    
+    #navbar a:hover {
+        font-weight: normal;
+        padding: 6px 6px;
+        
     }
     
     .cartnaviconimage{
@@ -116,7 +123,7 @@
     }
     
     .searchbarforinput{
-        height: 12px;
+        height: 14px;
         margin-left: 10px;   
     }
 

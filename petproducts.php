@@ -10,20 +10,27 @@
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
-        Updated:      [03-27-2023] 
+        Updated:      [04-09-2023] 
         Version:      1.0     
         Description:  This is my petproducts page
     -->
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
-    <?php include('includes/header.php');?>
-    <div class="allproductsarea">
+<?php include('includes/header.php');?>
+<div class="allproductsarea">
     <div class="catproducts">
         <h2 class="sectionlabel">Cat Products</h2>
         <div class="imagecontainer">
         <?php
-            require('../mysqli_connect.php'); 
+            //str_contains not built in to php 8 - fix for cpanel purposes
+            if (!function_exists('str_contains')) {
+            function str_contains($haystack, $needle){
+                return (strpos($haystack, $needle) !== false);
+            }
+        }
+            //connect to the db
+            require('../../mysqli_connect.php'); 
         
             $imagetag = '<img class="images" src="images/petproducts/cats/replaceme">';
         
@@ -32,9 +39,11 @@
             $files = array_diff(scandir($path), array('.', '..'));
         
             foreach ($files as $thisimagename) {
+                //prevent hidden files like DS.Store from being displayed
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
+                //for any images in images/art that match image_name in cat_products table of db
                 $query = "SELECT product_id, product_name, likes, carts FROM cat_products WHERE image_name = '$thisimagename'";
                 $result = mysqli_query($dbc, $query);
                 $row = mysqli_fetch_array($result);
@@ -43,13 +52,15 @@
                 $likes = $row['likes'];
                 $carts = $row['carts'];
                 
-                $likebutton = '<form method="post" action="add_like.php">
+                //like button functionality - calls add_like.php to communicate with db
+                $likebutton = '<form method="post" action="scripts/add_like.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
-                $addtocartbutton = '<form method="post" action="add_cart.php">
+                //cart button functionality - calls add_cart.php to communicate with db
+                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -59,13 +70,13 @@
 
                 $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
+                //now show the image item
                 echo $imageitem; 
             }
 
+        //close db connection
         mysqli_close($dbc); 
-        
         ?>
-
         </div>
     </div>
     <hr>
@@ -74,7 +85,8 @@
         <h2 class="sectionlabel">Dog Products</h2>
         <div class="imagecontainer">
         <?php
-            require('../mysqli_connect.php'); 
+            //connect to db
+            require('../../mysqli_connect.php'); 
         
             $imagetag = '<img class="images" src="images/petproducts/dogs/replaceme">';
         
@@ -83,9 +95,11 @@
             $files = array_diff(scandir($path), array('.', '..'));
         
             foreach ($files as $thisimagename) {
+                
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
+                //for any images in images/art that match image_name in dog_products table of db
                 $query = "SELECT product_id, product_name, likes, carts FROM dog_products WHERE image_name = '$thisimagename'";
                 $result = mysqli_query($dbc, $query);
                 $row = mysqli_fetch_array($result);
@@ -94,13 +108,15 @@
                 $likes = $row['likes'];
                 $carts = $row['carts'];
                 
-                $likebutton = '<form method="post" action="add_like.php">
+                //like button functionality
+                $likebutton = '<form method="post" action="scripts/add_like.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
-                $addtocartbutton = '<form method="post" action="add_cart.php">
+                //cart button functionality
+                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -110,13 +126,13 @@
 
                 $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
+                //show the image item
                 echo $imageitem; 
             }
 
+        //close db
         mysqli_close($dbc); 
-        
         ?>
-
         </div>
     </div>
     <hr>
@@ -125,7 +141,8 @@
         <h2 class="sectionlabel">Products for You</h2>
         <div class="imagecontainer">
         <?php
-            require('../mysqli_connect.php'); 
+            //connect to db
+            require('../../mysqli_connect.php'); 
         
             $imagetag = '<img class="images" src="images/petproducts/foryou/replaceme">';
         
@@ -137,6 +154,7 @@
                 if (str_contains($thisimagename, 'Store')) { 
                     continue;
                 }
+                //for any images in images/art that match image_name in foryou_products table of db
                 $query = "SELECT product_id, product_name, likes, carts FROM foryou_products WHERE image_name = '$thisimagename'";
                 $result = mysqli_query($dbc, $query);
                 $row = mysqli_fetch_array($result);
@@ -145,12 +163,14 @@
                 $likes = $row['likes'];
                 $carts = $row['carts'];
                 
+                //like button functionality
                 $likebutton = '<form method="post" action="add_like.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
+                //cart button functionality
                 $addtocartbutton = '<form method="post" action="add_cart.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
@@ -161,19 +181,16 @@
 
                 $imageitem = '<div class="imageitem">' . $productnamediv . str_replace('replaceme', $thisimagename, $imagetag) . $likebutton . $addtocartbutton . '</div>';
 
+                //show the image item
                 echo $imageitem; 
             }
-
-        mysqli_close($dbc); 
         
+        //close db
+        mysqli_close($dbc); 
         ?>
-
         </div>
     </div>
     </div>
-    
-    
     <?php include('includes/footer.html');?>
-    
 </body>
 </html>

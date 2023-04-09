@@ -10,54 +10,55 @@
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
-        Updated:      [04-07-2023] 
+        Updated:      [04-09-2023] 
         Version:      1.0     
         Description:  This is my register page
     -->
     <link rel="stylesheet" href="css/loginpages.css">
 </head>
 <body>
-<script src="scripts/validator.js"></script>
-<?php // add a record to the users table.
-    $page_title = 'Register';
-    include('includes/header.php');
+    <script src="scripts/validator.js"></script>
+    <?php 
+        $page_title = 'Register';
+        include('includes/header.php');
 
-//validate fields are filled
+    //check fields are filled
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        require('../mysqli_connect.php'); 
+        require('../../mysqli_connect.php'); 
         $errors = []; 
 
-	// Check for first name
-	   if (empty($_POST['first_name'])) {
-		  $errors[] = 'Please enter your first name.';
-	   } else {
-		  $fn = mysqli_real_escape_string($dbc, trim($_POST['first_name']));
-	   }
+	   // Check for first name
+        if (empty($_POST['first_name'])) {
+            $errors[] = 'Please enter your first name.';
+        } else {
+            $fn = mysqli_real_escape_string($dbc, trim($_POST['first_name']));
+        }
 
-	// Check for last name
-	   if (empty($_POST['last_name'])) {
-		  $errors[] = 'Please enter your last name.';
-	   } else {
-		  $ln = mysqli_real_escape_string($dbc, trim($_POST['last_name']));
-	   }
+	   // Check for last name
+        if (empty($_POST['last_name'])) {
+            $errors[] = 'Please enter your last name.';
+        } else {
+            $ln = mysqli_real_escape_string($dbc, trim($_POST['last_name']));
+        }
 
-	// Check for email
-	   if (empty($_POST['email'])) {
-		  $errors[] = 'Please enter your email address.';
-	   } else {
-		  $e = mysqli_real_escape_string($dbc, trim($_POST['email']));
-	   }
-    //Check for birthday
+	   // Check for email
+        if (empty($_POST['email'])) {
+            $errors[] = 'Please enter your email address.';
+        } else {
+            $e = mysqli_real_escape_string($dbc, trim($_POST['email']));
+        }
+        
+        //Check for birthday
         if(empty($_POST['birthday'])){
             $errors[] = 'Please enter your birthday.';
         } else {
             $bd = mysqli_real_escape_string($dbc, trim($_POST['birthday']));
         }
 
-	   if (!empty($_POST['pass1'])) {
-		  if ($_POST['pass1'] != $_POST['pass2']) {
-			 $errors[] = 'Passwords did not match.';
-		  } else {
+        if (!empty($_POST['pass1'])) {
+            if ($_POST['pass1'] != $_POST['pass2']) {
+                $errors[] = 'Passwords did not match.';
+        } else {
 			 $p = mysqli_real_escape_string($dbc, trim($_POST['pass1']));
 		  }
 	   } else {
@@ -65,33 +66,37 @@
 	   }
 
 	   if (empty($errors)) { 
-		  $q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, birthday) VALUES ('$fn', '$ln', '$e', SHA2('$p', 512), NOW(), '$bd')";
-		  $r = @mysqli_query($dbc, $q);
-		  if ($r) { 
-			 echo '<div class="boxarea"><h1 class="messageheader">Thank you!</h1>
-		  <p class="messagetext">You are now registered as a user!</p><p><br></p></div>';
+           $q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, birthday) VALUES ('$fn', '$ln', '$e', SHA2('$p', 512), NOW(), '$bd')";
+           $r = @mysqli_query($dbc, $q);
+           if ($r) { 
+               echo '<div class="boxarea"><h1 class="messageheader">Thank you!</h1>
+               <p class="messagetext">You are now registered as a user!</p><p><br></p></div>';
 
-		  } else { 
-			 echo '<div class="boxarea"><h1>System Error</h1>
-			 <p class="error">You could not be registered at this time. Please try again later.</p></div>';
-			 echo '<p>' . mysqli_error($dbc) . '<br><br>Query: ' . $q . '</p>';
-		  } 
-		  mysqli_close($dbc); 
+           } else { 
+               echo '<div class="boxarea"><h1>System Error</h1>
+               <p class="error">You could not be registered at this time. Please try again later.</p></div>';
+               echo '<p>' . mysqli_error($dbc) . '<br><br>Query: ' . $q . '</p>';
+           }
+           
+           //close db connection
+           mysqli_close($dbc); 
 
-		  include('includes/footer.html');
-		  exit();
+           include('includes/footer.html');
+           exit();
 
 	   } else { 
-		  echo '<h1>Error!</h1>
-		  <p class="error">The following error(s) occurred:<br>';
-		  foreach ($errors as $msg) { 
-			 echo " - $msg<br>\n";
-		  }
-		  echo '</p><p>Please try again.</p><p><br></p>';
-	   } 
-	   mysqli_close($dbc); 
-
-    } ?>
+           echo '<h1>Error!</h1>
+           <p class="error">The following error(s) occurred:<br>';
+           foreach ($errors as $msg) { 
+               echo " - $msg<br>\n";
+           }
+           echo '</p><p>Please try again.</p><p><br></p>';
+       } 
+        
+        //close db connection
+        mysqli_close($dbc); 
+    } 
+    ?>
     <div class="boxarea">
         <h1>Register</h1>
         <hr>

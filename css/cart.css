@@ -25,6 +25,7 @@ hr {
     height: 30px;
     position: absolute;
     left: 40%;
+    margin-top: 40px;
 }
 
 .donatebutton:hover{

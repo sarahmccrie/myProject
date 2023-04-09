@@ -1,13 +1,13 @@
+//call validate() function, and submit if can validate
 function validateAndSubmit(){
-    if (validate()){
-        
-        echo '<div class="boxarea"><h1 class="messageheader">Thank you!</h1>
-        <p class="messagetext">You are now registered and will be able to login to your account from now on!</p><p><br></p></div>';
-
-		  } 
+    if(validate()){
+        window.location.href = 'confirmation.php';
+    }
+    else {
+        return;
     }
 }
-   
+
 function validate(){
     var fname = document.getElementById('fname').value;
     var lname = document.getElementById('lname').value;
@@ -19,15 +19,22 @@ function validate(){
     var creditcard = document.getElementById('creditcard').value;
     var creditcardnum = document.getElementById('creditcardnum').value;
     var donationamount = document.getElementById('donationamount').value;
-
+  
     if (fname == "" || lname == "" || addressnum == "" || addressstreet == "" || addresscity == "" || addressprovince == "" || country == "-1" || creditcard == "-1" || creditcardnum == "" || donationamount == "") {
         alert("Please ensure that all fields are filled");
         return false;
     }
+    else {
+        localStorage.setItem('fname', fname);
+        localStorage.setItem('lname', lname);
+        localStorage.setItem('addressnum', addressnum);
+        localStorage.setItem('addressstreet', addressstreet);
+        localStorage.setItem('addresscity', addresscity);
+        localStorage.setItem('addressprovince', addressprovince);
+        localStorage.setItem('country', country);
+        localStorage.setItem('creditcard', creditcard);
+        localStorage.setItem('creditcardnum', creditcardnum);
+        localStorage.setItem('donationamount', donationamount);
+        return true;
+    }
 }
-
-
-function submitAndRedirectCheckout(){
-    location.href="checkout.php";
-}
-

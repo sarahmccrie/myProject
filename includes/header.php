@@ -29,13 +29,17 @@
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/about.php") { ?> class="active" <?php } ?> href="about.php">About</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/register.php") { ?> class="active" <?php } ?> href="register.php">Register</a>
         <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/view_users.php") { ?> class="active" <?php } ?> href="view_users.php">Users</a>
-        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/password.php") { ?> class="active" <?php } ?> href="password.php">Change Password</a>
+        <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/password.php") { ?> class="active" <?php } ?> href="password.php">Password</a>
         
         <div class="rightfloatsection">
             <div class="navbarsearch">
-                <input class="searchbarforinput" type="text" placeholder="Search">
-                <button class="gobutton" type="submit">Go</button>
+
+                <form method="get" action="search.php">
+                    <input class="searchbarforinput" type="text" placeholder="dog" name="search" id="search">
+                    <button class="gobutton" type="submit" name="search_button" value="search">Go</button>
+                </form>
             </div>
+
             <a <?php if ($_SERVER['REQUEST_URI'] == "/myProject/cart.php") { ?> class="activecart" <?php } ?> id="cartnavicon" href="cart.php"><img class="cartnaviconimage" src="images/other/cart.png"></a>
         </div>
     </nav>

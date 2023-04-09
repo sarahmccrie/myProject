@@ -10,7 +10,7 @@
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
-        Updated:      [03-27-2023] 
+        Updated:      [04-09-2023] 
         Version:      1.0     
         Description:  This is my about page
     -->
@@ -27,7 +27,7 @@ include('includes/header.php');
             <p class="abouttext">Hello! My name is Sarah McCrie and I am a first year Software Development and Network Engineering student at Sheridan College.</p>
             <hr>
             <h2 class="aboutsubtitle">How it Started:</h2>
-            <p class="abouttext">In 2016, I graduated from Sheridan's Art Fundamentals Program before deciding to persue another career path. Then, in 2020, I graduated from Sheridan's Veterinary Technician Program, completed the <a class="contextlinks" href="https://www.aavsb.org/vtne-overview/">Veterinary Technician National Exam (VTNE)</a> and received my license as a <a class="contextlinks" href="https://oavt.org/about/what-is-an-rvt/">Registered Veterinary Technician (RVT)</a> from the <a class="contextlinks" href="https://oavt.org/about/">Ontario Association of Veterinary Technicians (OAVT)</a>. For 2 years, I worked full time as an RVT for a wonderful clinic before ultimately deciding to return to school for software development. I am now enrolled in school full time and am still working part time as an RVT.</p>
+            <p class="abouttext">In 2016, I graduated from Sheridan's Art Fundamentals Program before deciding to persue another career path. Then, in 2020, I graduated from Sheridan's Veterinary Technician Program, completed the <a class="contextlinks" href="https://www.aavsb.org/vtne-overview/" target="_blank">Veterinary Technician National Exam (VTNE)</a> and received my license as a <a class="contextlinks" href="https://oavt.org/about/what-is-an-rvt/" target="_blank">Registered Veterinary Technician (RVT)</a> from the <a class="contextlinks" href="https://oavt.org/about/" target="_blank">Ontario Association of Veterinary Technicians (OAVT)</a>. For 2 years, I worked full time as an RVT for a wonderful clinic before ultimately deciding to return to school for software development. I am now enrolled in school full time and am still working part time as an RVT.</p>
             <p class="abouttext">With my love for animals and my desire to continue improving my art skills, I began painting pet portraits for my friends and family. With enough practice, I am now happy to offer custom portraits to you as well! <a class="contextlinks" href="art.php">Come take a look...</a></p>
         </div>
             <div class="aboutsectionitem">
