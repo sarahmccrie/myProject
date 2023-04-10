@@ -18,9 +18,8 @@ function validate(){
     var country = document.getElementById('country').value;
     var creditcard = document.getElementById('creditcard').value;
     var creditcardnum = document.getElementById('creditcardnum').value;
-    var donationamount = document.getElementById('donationamount').value;
   
-    if (fname == "" || lname == "" || addressnum == "" || addressstreet == "" || addresscity == "" || addressprovince == "" || country == "-1" || creditcard == "-1" || creditcardnum == "" || donationamount == "") {
+    if (fname == "" || lname == "" || addressnum == "" || addressstreet == "" || addresscity == "" || addressprovince == "" || country == "-1" || creditcard == "-1" || creditcardnum == "") {
         alert("Please ensure that all fields are filled");
         return false;
     }
@@ -34,7 +33,7 @@ function validate(){
         localStorage.setItem('country', country);
         localStorage.setItem('creditcard', creditcard);
         localStorage.setItem('creditcardnum', creditcardnum);
-        localStorage.setItem('donationamount', donationamount);
+        localStorage.setItem('donationamount', document.getElementById('donationamount').innerHTML);
         return true;
     }
 }

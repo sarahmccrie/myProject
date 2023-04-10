@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
+    <Title>View Users</Title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,32 +17,33 @@
 <link rel="stylesheet" href="css/loginpages.css">
 </head>
 <body>
-    <?php
-        $page_title = 'View Current Users';
-        include('includes/header.php');
-    ?>
+    <?php include('includes/header.php'); ?>
     <div id="viewusersboxarea" class="boxarea"> 
-    <?php
-        echo '<h1>Registered Users</h1>';
+        <h1>Registered Users</h1>
+        <?php
+        //connect to db
         require('../../mysqli_connect.php');
         $display = 15;
 
-        if (isset($_GET['p']) && is_numeric($_GET['p'])) { 
+        if (isset($_GET['p']) && is_numeric($_GET['p'])){ 
             $pages = $_GET['p'];
-        } else {
+        } 
+        else {
             $q = "SELECT COUNT(user_id) FROM users";
             $r = @mysqli_query($dbc, $q);
             $row = @mysqli_fetch_array($r, MYSQLI_NUM);
             $records = $row[0];
         if ($records > $display) { 
             $pages = ceil ($records/$display);
-        } else {
+        } 
+            else {
             $pages = 1;
         }
     }
     if (isset($_GET['s']) && is_numeric($_GET['s'])) {
         $start = $_GET['s'];
-    } else {
+    } 
+    else {
 	   $start = 0;
     }
 
@@ -63,6 +64,7 @@
 		  $sort = 'rd';
 		  break;
     }
+        
     $q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, DATE_FORMAT(birthday, '%M %d, %Y') AS bd, user_id FROM users ORDER BY $order_by LIMIT $start, $display";
     $r = @mysqli_query($dbc, $q);
 
@@ -70,10 +72,10 @@
     echo '<table class="userlisttable" width="100%">
         <thead>
         <tr>
-	       <th align="left"><strong><a href="view_users.php?sort=ln">Last Name</a></strong></th>
-	       <th align="left"><strong><a href="view_users.php?sort=fn">First Name</a></strong></th>
-	       <th align="left"><strong><a href="view_users.php?sort=rd">Date Registered</a></strong></th>
-           <th align="left"><strong><a href="view_users.php?sort=bd">Birthday</a></strong></th>
+	       <th align="center"><strong><a href="view_users.php?sort=ln">Last Name</a></strong></th>
+	       <th align="center"><strong><a href="view_users.php?sort=fn">First Name</a></strong></th>
+	       <th align="center"><strong><a href="view_users.php?sort=rd">Date Registered</a></strong></th>
+           <th align="center"><strong><a href="view_users.php?sort=bd">Birthday</a></strong></th>
         </tr>
         </thead>
         <tbody>
@@ -83,16 +85,17 @@
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         $bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
         echo '<tr bgcolor="' . $bg . '">
-		  <td align="left">' . $row['last_name'] . '</td>
-		  <td align="left">' . $row['first_name'] . '</td>
-		  <td align="left">' . $row['dr'] . '</td> 
-          <td align="left">' . $row['bd'] . '</td>
-        </tr>
-	';
+            <td align="center">' . $row['last_name'] . '</td>
+            <td align="center">' . $row['first_name'] . '</td>
+            <td align="center">' . $row['dr'] . '</td> 
+            <td align="center">' . $row['bd'] . '</td>
+        </tr>';
     } 
 
     echo '</tbody></table>';
     mysqli_free_result($r);
+        
+    //close db connection
     mysqli_close($dbc);
 
     if ($pages > 1) {
@@ -117,12 +120,11 @@
 	   }
 
 	   echo '</p>'; 
-
     }
     
     include('includes/footer.html');
     ?>
-</div>
+    </div>
 </body>
 </html>
     

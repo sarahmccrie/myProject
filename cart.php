@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Cart</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,15 +16,19 @@
     -->
     <link rel="stylesheet" href="css/cart.css">
     <script src="scripts/validator.js"></script>
-<title>Cart</title>
+
 </head>
 <body>
     <?php include('includes/header.php'); ?>
-    <h1 class="pageheader">Coming Soon!</h1>
-    <hr>
-    <h4 class="subheader">Thank you for your interest in supporting us. The cart is not active yet, but for now, you can donate!</h4>
-    <button class="donatebutton" onclick='location.href="checkout.php"'>Donate Now</button>
-   
+    <div class="backing-container">
+        <h1 class="pageheader">Coming Soon!</h1>
+        <hr>
+        <p class="subheader">Thank you for your interest in supporting us! The cart is not active yet, but for now, you can donate by clicking the button below!</p>
+        <hr>
+        <button class="donatebutton" onclick='location.href="checkout.php"'>Donate Now</button>
+        <br>
+        <br>
+    </div>
     <?php include('includes/footer.html'); ?>
 <script src="scripts/validator.js"></script>
 </body>

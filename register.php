@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
+    <Title>Register</Title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,40 +17,38 @@
     <link rel="stylesheet" href="css/loginpages.css">
 </head>
 <body>
-    <script src="scripts/validator.js"></script>
     <?php 
-        $page_title = 'Register';
         include('includes/header.php');
 
-    //check fields are filled
+    //check fields are not empty
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         require('../../mysqli_connect.php'); 
         $errors = []; 
 
 	   // Check for first name
         if (empty($_POST['first_name'])) {
-            $errors[] = 'Please enter your first name.';
+            $errors[] = 'You must enter your first name.';
         } else {
             $fn = mysqli_real_escape_string($dbc, trim($_POST['first_name']));
         }
 
 	   // Check for last name
         if (empty($_POST['last_name'])) {
-            $errors[] = 'Please enter your last name.';
+            $errors[] = 'You must enter your last name.';
         } else {
             $ln = mysqli_real_escape_string($dbc, trim($_POST['last_name']));
         }
 
 	   // Check for email
         if (empty($_POST['email'])) {
-            $errors[] = 'Please enter your email address.';
+            $errors[] = 'You must enter your email address.';
         } else {
             $e = mysqli_real_escape_string($dbc, trim($_POST['email']));
         }
         
         //Check for birthday
         if(empty($_POST['birthday'])){
-            $errors[] = 'Please enter your birthday.';
+            $errors[] = 'You must enter your birthday.';
         } else {
             $bd = mysqli_real_escape_string($dbc, trim($_POST['birthday']));
         }
@@ -62,7 +60,7 @@
 			 $p = mysqli_real_escape_string($dbc, trim($_POST['pass1']));
 		  }
 	   } else {
-		  $errors[] = 'Please enter your password.';
+		  $errors[] = 'You must enter your password.';
 	   }
 
 	   if (empty($errors)) { 
@@ -85,12 +83,11 @@
            exit();
 
 	   } else { 
-           echo '<h1>Error!</h1>
-           <p class="error">The following error(s) occurred:<br>';
+           echo '<p class="error"><b>The following error(s) occurred:</b><br>';
            foreach ($errors as $msg) { 
                echo " - $msg<br>\n";
            }
-           echo '</p><p>Please try again.</p><p><br></p>';
+           echo 'Please try again.<br></p>';
        } 
         
         //close db connection
@@ -99,15 +96,16 @@
     ?>
     <div class="boxarea">
         <h1>Register</h1>
+        <h2 class="pleasenote">Please note that other users will be able to see your name and birthday!</h2>
         <hr>
         <form action="register.php" method="post">
-	       <p><b>First Name:</b> <input id="fname" class="userinfo" type="text" name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>"></p>
-	       <p><b>Last Name:</b> <input id="lname" class="userinfo" type="text" name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>"></p>
-	       <p><b>Email Address:</b> <input id="registeremail" class="userinfo" type="email" name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>"> </p>
-            <p><b>Birthday:</b><input type="date" id="birthday" class="userinfo" name="birthday" size="20" value="<?php if (isset($_POST['birthday'])) echo $_POST['birthday']; ?>"></p>
-	       <p><b>Password:</b> <input id="registerpass" class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>"></p>
-	       <p><b>Confirm Password:</b> <input id="registerconfirmpass" class="userinfo" type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>"></p>
-	       <p><input class="usersubmit" type="submit" name="submit" value="Register"></p>
+            <p><b>First Name:</b> <input id="fname" class="userinfo" type="text" name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" required></p>
+            <p><b>Last Name:</b> <input id="lname" class="userinfo" type="text" name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" required></p>
+            <p><b>Email Address:</b> <input id="registeremail" class="userinfo" type="email" name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" required> </p>
+            <p><b>Birthday:</b><input type="date" id="birthday" class="userinfo" name="birthday" size="20" value="<?php if (isset($_POST['birthday'])) echo $_POST['birthday']; ?>" required></p>
+            <p><b>Password:</b> <input id="registerpass" class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" required></p>
+            <p><b>Confirm Password:</b> <input id="registerconfirmpass" class="userinfo" type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" required></p>
+            <p><input class="usersubmit" type="submit" name="submit" value="Register"></p>
         </form>
     </div>
     <?php include('includes/footer.html'); ?>

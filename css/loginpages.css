@@ -7,9 +7,19 @@
 }
 
 hr {
-  height: 2px;
-  background-color: white;
-  border: none;
+    height: 2px;
+    background-color: white;
+    border: none;
+    margin-bottom: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--darkblue);
+}
+
+a:hover{
+    color: var(--mutebrown);
 }
 
 /*css for main div*/
@@ -19,18 +29,15 @@ hr {
     margin-left: auto;
     margin-right: auto;
     width: 400px;
-    padding: 20px
+    padding: 20px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 /*special css for view_users.php*/
 #viewusersboxarea{
     width: 90%;
-}
-
-.boxarea p{
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    text-align: center;
 }
 
 h1{
@@ -40,8 +47,10 @@ h1{
     padding-bottom: 2px;
 }
 
-hr{
-    margin-bottom: 30px;
+.pleasenote{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
 }
 
 /*css for user input/text boxes*/

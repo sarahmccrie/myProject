@@ -26,7 +26,6 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //open db connection
         require('../../mysqli_connect.php');
-        //if any errors arise during connection
 	   $errors = []; 
 
 	// Check for email address:

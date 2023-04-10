@@ -9,7 +9,7 @@
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
-        Updated:      [03-27-2023] 
+        Updated:      [04-09-2023] 
         Version:      1.0     
         Description:  This is my checkout page
     -->
@@ -62,7 +62,7 @@
                 </select>
                 <br>
                 <label class="inputlabel">Credit Card Number:</label>
-                <input type="number" class="boxes" id="creditcardnum" minlength="16">
+                <input type="number" class="boxes" id="creditcardnum" minlength="16" max="16">
                 <br>
                 <div class="labelandfield">
                     <label class="inputlabel">Please input total to confirm order:</label>

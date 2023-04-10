@@ -18,7 +18,7 @@ hr{
 .bannercard {
     width: 100%;
     height: 400px;
-    background-image: url("/myProject/images/other/mutedgif.gif");
+    background-image: url("/project/myProject/images/other/mutedgif.gif");
     background-color: var(--muteyellow);
     text-align: center;
     margin-right: auto;

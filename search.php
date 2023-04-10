@@ -18,7 +18,8 @@
 </head>
 <body>
     <?php include('includes/header.php'); ?>
-     <div class="imagecontainer">
+    
+        
     <?php
          if (!function_exists('str_contains')) {
             function str_contains($haystack, $needle){
@@ -26,7 +27,11 @@
             }
         }
     
-    require('../../mysqli_connect.php');  
+    require('../../mysqli_connect.php'); 
+    echo '<h3>Results: </h3>';
+    ?>
+    <div class="imagecontainer">
+    <?php
 
     if(isset($_GET['search'])) {
         $search = mysqli_real_escape_string($dbc, $_GET['search']);
@@ -52,13 +57,13 @@
                     }
                 }
 
-                $likebutton = '<form method="post" action="add_like.php">
+                $likebutton = '<form method="post" action="scripts/add_like.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
 
-                $addtocartbutton = '<form method="post" action="add_cart.php">
+                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -74,6 +79,7 @@
 
         mysqli_close($dbc); 
     }
+        
     ?>
     </div>
     <?php include('includes/footer.html'); ?>

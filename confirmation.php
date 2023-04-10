@@ -6,23 +6,23 @@
 </head>
 <body>
     <?php include('includes/header.php'); ?>
-	<div class="container">
-		<h1>Thank you for your donation!</h1>
-		<p>Please review the information below:</p>
-		<div class="splitrow">
-			<div class="leftcol">
+    <br>
+    <h1 class="thankyouheader">Thank you!</h1>
+    <h3 class="thankyousubheader">Hi <b><span id="fname"></span> <span id="lname"></span></b>! We really appreciate your donation!</h3>
+	<div class="splitscreen">
+		<div class="sectionflexcontainer">
+			<div class="infoareaitem">
 				<h2>Personal Information</h2>
-				<p>Name: <span id="fname"></span> <span id="lname"></span></p>
-				<p>Address: <span id="addressnum"></span> <span id="addressstreet"></span>, <span id="addresscity"></span>, <span id="addressprovince"></span>, <span id="country"></span></p>
+				<p><b>Address:</b> <br>
+                    <span id="addressnum"></span> <span id="addressstreet"></span><br> <span id="addresscity"></span>, <span id="addressprovince"></span>, <span id="country"></span></p>
 			</div>
-			<div class="rightcol">
+			<div class="infoareaitem">
 				<h2>Payment Information</h2>
-				<p>Credit Card: <span id="creditcard"></span></p>
-				<p>Credit Card Number: <span id="creditcardnum"></span></p>
-				<p>Total Donation: $<span id="donationamount"></span></p>
+				<p><b>Card Type: </b><span id="creditcard"></span>
+                <br>
+                <b>Credit Card Number: </b>xxxx - xxxx - xxxx - xxxx </p>
 			</div>
 		</div>
-		<button type="button" onclick="window.print()">Print Confirmation</button>
 	</div>
 	<script type="text/javascript">
 		//Retrieve data from local storage and display on confirmation page
@@ -36,9 +36,9 @@
 		document.getElementById('creditcard').innerHTML = localStorage.getItem('creditcard');
 		document.getElementById('creditcardnum').innerHTML = localStorage.getItem('creditcardnum');
 		document.getElementById('donationamount').innerHTML = localStorage.getItem('donationamount');
-		//Clear local storage
-		localStorage.clear();
+
 	</script>
+    <?php include('includes/footer.html'); ?>
     
 </body>
 </html>
