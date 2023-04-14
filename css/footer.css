@@ -22,7 +22,6 @@ body {
     bottom: 0;
     right: 0;
     width: 102%;
-  /* Set the fixed height of the footer here */
     height: 50px;
     background-color: var(--peach);
     color: white;
@@ -43,4 +42,10 @@ body > .container {
   padding-left: 15px;
 }
 
+@media only screen and (max-width: 800px) {
+    .footer{
+        font-size: 12px;
+        height: 40px; 
+    }
+}
 

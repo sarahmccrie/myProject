@@ -16,7 +16,6 @@
     -->
     <link rel="stylesheet" href="css/cart.css">
     <script src="scripts/validator.js"></script>
-
 </head>
 <body>
     <?php include('includes/header.php'); ?>

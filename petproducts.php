@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sarah McCrie">
-    <meta name="description" content="this is my petproducts page">
+    <meta name="description" content="petproducts.php">
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
@@ -14,7 +14,8 @@
         Version:      1.0     
         Description:  This is my petproducts page
     -->
-<link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="icon" type="image/x-icon" href="../images/other/favicon.ico" >
 </head>
 <body>
 <?php include('includes/header.php');?>
@@ -53,14 +54,14 @@
                 $carts = $row['carts'];
                 
                 //like button functionality - calls add_like.php to communicate with db
-                $likebutton = '<form method="post" action="scripts/add_like.php">
+                $likebutton = '<form method="post" action="scripts/add_like_cats.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
                 //cart button functionality - calls add_cart.php to communicate with db
-                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
+                $addtocartbutton = '<form method="post" action="scripts/add_cart_cats.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -109,14 +110,14 @@
                 $carts = $row['carts'];
                 
                 //like button functionality
-                $likebutton = '<form method="post" action="scripts/add_like.php">
+                $likebutton = '<form method="post" action="scripts/add_like_dogs.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
                 //cart button functionality
-                $addtocartbutton = '<form method="post" action="scripts/add_cart.php">
+                $addtocartbutton = '<form method="post" action="scripts/add_cart_dogs.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    
@@ -164,14 +165,14 @@
                 $carts = $row['carts'];
                 
                 //like button functionality
-                $likebutton = '<form method="post" action="add_like.php">
+                $likebutton = '<form method="post" action="scripts/add_like_foryou.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="likebutton" type="submit">
                     <img class="buttonimage" src="images/other/like.png">' . $likes . '</button>                    
                 </form>';
                 
                 //cart button functionality
-                $addtocartbutton = '<form method="post" action="add_cart.php">
+                $addtocartbutton = '<form method="post" action="scripts/add_cart_foryou.php">
                     <input type="hidden" name="product_id" value="' . $item_id . '">
                     <button class="addtocartbutton" type="submit">
                     <img class="buttonimage" src="images/other/cart.png">' . $carts . '</button>                    

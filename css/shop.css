@@ -25,8 +25,8 @@ hr {
 
 /*contains shopcategoryimages and tiledesciption headers*/
 .categoryitem{    
-    background-color: var(--mutebrown);
-    color: white;
+    background-color: var(--muteyellow);
+    color: var(--mutebrown);
     width: 100%;
     justify-content: space-around;
     padding-bottom: 10px;

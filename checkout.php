@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Checkout</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sarah McCrie">
-    <meta name="description" content="this is my checkout page">
+    <meta name="description" content="checkout.php">
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
@@ -15,7 +16,7 @@
     -->
     <link rel="stylesheet" href="css/checkout.css">
     <script src="scripts/validator.js"></script>
-<title>Checkout</title>
+    <link rel="icon" type="image/x-icon" href="../images/other/favicon.ico" >
 </head>
 <body>
     <?php include('includes/header.php'); ?>
@@ -23,9 +24,9 @@
     <div class="splitscreen">
         <div class="sectionflexcontainer">
             <div class="infoareaitem">
-                <h1 class="sectionheader">Please Enter Personal Information Below:</h1>
+                <h1 class="sectionheader">Please Enter Personal Information:</h1>
                 <div class="labelandfield">
-                    <label class="inputlabel">Name:</label>
+                    <label class="inputlabel">&nbsp;&nbsp;&nbsp;&nbsp;Name:</label>
                     <input type="text" id="fname" class="inputfield" placeholder="First Name">
                     <input type="text" id="lname" class="inputfield" placeholder="Last Name">
                 </div>
@@ -37,10 +38,10 @@
                 </div>
                 <br>
                 <div class="labelandfield">
-                    <label class="inputlabel">City:</label>
-                    <input type="text" id="addresscity" class="inputfield" placeholder="Mississauga">
-                    <label class="inputlabel">Province:</label>
-                    <input type="text" id="addressprovince" class="inputfield" placeholder="Ontario">
+                    <label class="inputlabel" id="hiddenlabel">Address:</label>
+                    <input type="text" id="addresscity" class="inputfield" placeholder="City">
+                    <label class="inputlabel"></label>
+                    <input type="text" id="addressprovince" class="inputfield" placeholder="Province">
                 </div>
                 <br>
                 <label class="inputlabel">Country:</label>
@@ -52,7 +53,7 @@
                 </select>
             </div>
             <div class="infoareaitem">
-                <h1 class="sectionheader">Please Enter Payment Information Below:</h1>
+                <h1 class="sectionheader">Please Enter Payment Information:</h1>
                 <label class="inputlabel">Credit Card:</label>
                 <select name="creditcard" id="creditcard" required class="boxes">
                     <option value="-1" name="selectcountry">Select</option>
@@ -65,7 +66,7 @@
                 <input type="number" class="boxes" id="creditcardnum" minlength="16" max="16">
                 <br>
                 <div class="labelandfield">
-                    <label class="inputlabel">Please input total to confirm order:</label>
+                    <label class="inputlabel">Donation Amount:</label>
                     <input type="text" class="inputfield" id="donationamount">
                 </div>
                 <br>

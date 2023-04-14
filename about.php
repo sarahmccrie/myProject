@@ -15,7 +15,7 @@
         Description:  This is my about page
     -->
     <link rel="stylesheet" href="css/indexabout.css"> 
-    
+    <link rel="icon" type="image/x-icon" href="../images/other/favicon.ico" >
 </head>
 <body>
 <?php

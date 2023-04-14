@@ -19,7 +19,8 @@
 <body>
     <?php include('includes/header.php'); ?>
     <div id="viewusersboxarea" class="boxarea"> 
-        <h1>Registered Users</h1>
+        <h1>Current Users</h1>
+        <hr>
         <?php
         //connect to db
         require('../../mysqli_connect.php');
@@ -47,6 +48,7 @@
 	   $start = 0;
     }
 
+    //sort based on clicked
     $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'rd';
 
     switch ($sort) {
@@ -72,10 +74,10 @@
     echo '<table class="userlisttable" width="100%">
         <thead>
         <tr>
-	       <th align="center"><strong><a href="view_users.php?sort=ln">Last Name</a></strong></th>
-	       <th align="center"><strong><a href="view_users.php?sort=fn">First Name</a></strong></th>
-	       <th align="center"><strong><a href="view_users.php?sort=rd">Date Registered</a></strong></th>
-           <th align="center"><strong><a href="view_users.php?sort=bd">Birthday</a></strong></th>
+	       <th align="center"><b><a href="view_users.php?sort=ln">Last Name</a></b></th>
+	       <th align="center"><b><a href="view_users.php?sort=fn">First Name</a></b></th>
+	       <th align="center"><b><a href="view_users.php?sort=rd">Date Registered</a></b></th>
+           <th align="center"><b><a href="view_users.php?sort=bd">Birthday</a></b></th>
         </tr>
         </thead>
         <tbody>
@@ -92,12 +94,14 @@
         </tr>';
     } 
 
+    //show the table
     echo '</tbody></table>';
     mysqli_free_result($r);
         
     //close db connection
     mysqli_close($dbc);
 
+    //if more users than fit on page
     if ($pages > 1) {
 
 	   echo '<br><p>';

@@ -18,9 +18,15 @@ function validate(){
     var country = document.getElementById('country').value;
     var creditcard = document.getElementById('creditcard').value;
     var creditcardnum = document.getElementById('creditcardnum').value;
+    
+
   
     if (fname == "" || lname == "" || addressnum == "" || addressstreet == "" || addresscity == "" || addressprovince == "" || country == "-1" || creditcard == "-1" || creditcardnum == "") {
-        alert("Please ensure that all fields are filled");
+        alert("Please ensure that all fields are filled.");
+        return false;
+    }
+    if (creditcardnum.length < 16){
+        alert("Credit card numbers must be 16 digits.");
         return false;
     }
     else {

@@ -94,17 +94,25 @@
         mysqli_close($dbc); 
     } 
     ?>
-    <div class="boxarea">
+    <div class="boxarea" id="registerboxarea">
         <h1>Register</h1>
         <h2 class="pleasenote">Please note that other users will be able to see your name and birthday!</h2>
         <hr>
         <form action="register.php" method="post">
-            <p><b>First Name:</b> <input id="fname" class="userinfo" type="text" name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" required></p>
-            <p><b>Last Name:</b> <input id="lname" class="userinfo" type="text" name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" required></p>
+            <p><b>Name:</b> <input id="fname" class="userinfo" type="text" placeholder="First" name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" required>
+
+            <input id="lname" class="userinfo" type="text" placeholder="Last" name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" required></p>
+            
             <p><b>Email Address:</b> <input id="registeremail" class="userinfo" type="email" name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" required> </p>
+            
             <p><b>Birthday:</b><input type="date" id="birthday" class="userinfo" name="birthday" size="20" value="<?php if (isset($_POST['birthday'])) echo $_POST['birthday']; ?>" required></p>
+            
             <p><b>Password:</b> <input id="registerpass" class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" required></p>
+            
             <p><b>Confirm Password:</b> <input id="registerconfirmpass" class="userinfo" type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" required></p>
+            
+            <hr>
+            
             <p><input class="usersubmit" type="submit" name="submit" value="Register"></p>
         </form>
     </div>

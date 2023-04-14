@@ -25,23 +25,30 @@
 .infoareaitem{
     background-color: var(--muteyellow);
     padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 5px;
+    padding-right: 30px;
     padding-bottom: 30px;
-    margin: 20px;
+    margin: 0px;
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-family: Arial, sans-serif;
 }
 
 .sectionheader{
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .inputlabel{
     font-weight: bold;
     margin-right: 10px;
+}
+
+#hiddenlabel{
+    color: var(--muteyellow);
 }
 
 .inputfield{
@@ -51,12 +58,20 @@
     margin-left: 2px;
 }
 
+.labelandfield{
+    display: flex;
+}
+
 .boxes{
     height: 26px;
 }
 
 .confirmdonation{
     padding: 10px;
+    background-color: white;
+    font-size: 16px;
+    width: 60%;
+    margin-left: 20%;
 }
 
 .confirmdonation:hover{
@@ -80,7 +95,11 @@
 
 @media only screen and (max-width: 980px) {
     .infoareaitem{
-        margin-left: 0;
-        width: 100%;
+        margin-top: 20px;
+    }
+    .inputfield{
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 90%;
     }
 }

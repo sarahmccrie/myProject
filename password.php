@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sarah McCrie">
-    <meta name="description" content="this is my password page">
+    <meta name="description" content="password.php">
     <!-- Author:      Sarah McCrie
         Program:      myProject
         Date:         [03-16-2023]
@@ -15,6 +15,7 @@
         Description:  This is my password page
     -->
     <link rel="stylesheet" href="css/loginpages.css">
+    <link rel="icon" type="image/x-icon" href="../images/other/favicon.ico" >
 </head>
 <body>
 
@@ -70,7 +71,7 @@
             //if able to change pass
 			if (mysqli_affected_rows($dbc) == 1) {
 				echo '<h1 class="messageheader">Thank you!</h1>
-				<p class="messagetext">Your password has been updated. In next lesson, you will actually be able to log in!</p><p><br></p>';
+				<p class="messagetext">Your password has been updated!</p><p><br></p>';
 
             } else { 
 				echo '<div class="boxarea"><h1>System Error</h1>
@@ -111,10 +112,15 @@
         <hr>
         <form action="password.php" method="post">
             <p><b>Email Address:</b> <input class="userinfo" type="email" name="email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" required> </p>
+            
             <p><b>Current Password:</b> <input class="userinfo" type="password" name="pass" size="10" maxlength="20" value="<?php if (isset($_POST['pass'])) echo $_POST['pass']; ?>" ></p>
+            
             <p><b>New Password:</b> <input class="userinfo" type="password" name="pass1" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" ></p>
+            
             <p><b>Confirm New Password:</b> <input class="userinfo"type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" ></p>
-	       <p><input class="usersubmit" type="submit" name="submit" value="Change Password"></p>
+            
+            <hr>
+            <p><input class="usersubmit" type="submit" name="submit" value="Confirm"></p>
         </form>
     </div>
     <?php include('includes/footer.html'); ?>
